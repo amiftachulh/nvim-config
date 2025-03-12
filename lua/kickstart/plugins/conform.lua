@@ -30,6 +30,8 @@ return {
         javascriptreact = { 'prettier' },
         json = { 'prettier' },
         lua = { 'stylua' },
+        markdown = { 'prettier' },
+        mdx = { 'prettier' },
         sql = { 'sql_formatter' },
         svelte = { 'prettier' },
         typescript = { 'prettier' },

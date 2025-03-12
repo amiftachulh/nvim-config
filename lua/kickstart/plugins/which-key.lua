@@ -36,6 +36,8 @@ return {
         { '<leader>t_', hidden = true },
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>w_', hidden = true },
+        { '<leader>b', group = '[B]uffer' },
+        { '<leader>b_', hidden = true },
       }
       -- visual mode
       require('which-key').add {

@@ -1,18 +1,23 @@
 return {
-
   { -- Linting
     'mfussenegger/nvim-lint',
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       local lint = require 'lint'
+
+      local eslint_installed = vim.fn.executable 'eslint' == 1
+
       lint.linters_by_ft = {
         go = { 'staticcheck' },
-        javascript = { 'eslint' },
-        javascriptreact = { 'eslint' },
         markdown = { 'markdownlint' },
-        typescript = { 'eslint' },
-        typescriptreact = { 'eslint' },
       }
+
+      if eslint_installed then
+        lint.linters_by_ft.javascript = { 'eslint' }
+        lint.linters_by_ft.javascriptreact = { 'eslint' }
+        lint.linters_by_ft.typescript = { 'eslint' }
+        lint.linters_by_ft.typescriptreact = { 'eslint' }
+      end
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
       -- instead set linters_by_ft like this:
